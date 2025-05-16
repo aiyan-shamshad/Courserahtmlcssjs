@@ -1,0 +1,347 @@
+<!DOCTYPE HTML5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #f8f9fa;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 5%;
+            min-height: 100vh;
+        }
+        
+        /* About Section */
+        #about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 150px;
+            background-color: #ecf0f1;
+        }
+        
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3498db;
+        }
+        
+        .about-content {
+            width: 60%;
+        }
+        
+        /* Skills Section */
+        #skills {
+            background-color: #fff;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .skill img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+        
+        /* Projects Section */
+        #projects {
+            background-color: #f8f9fa;
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .project {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        /* Recommendations Section */
+        #recommendations {
+            background-color: #ecf0f1;
+        }
+        
+        .recommendations-container {
+            margin-top: 50px;
+        }
+        
+        .recommendation {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        /* Form */
+        .recommendation-form {
+            margin-top: 50px;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Popup */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2ecc71;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 8px;
+            visibility: hidden;
+            z-index: 1001;
+        }
+        
+        /* Home Icon */
+        .home-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            font-size: 30px;
+            color: #3498db;
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">John Doe</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <img src="profile.png" alt="Profile Picture" class="profile-img">
+        <div class="about-content">
+            <h1>Hi, I'm John Doe</h1>
+            <p>I'm a passionate web developer with 3 years of experience creating responsive and user-friendly websites. My expertise includes front-end development with HTML, CSS, and JavaScript, as well as back-end technologies like Node.js. I'm dedicated to writing clean, efficient code and always eager to learn new technologies.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <img src="html.png" alt="HTML">
+                <p>HTML5</p>
+            </div>
+            <div class="skill">
+                <img src="css.png" alt="CSS">
+                <p>CSS3</p>
+            </div>
+            <div class="skill">
+                <img src="js.png" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill">
+                <img src="react.png" alt="React">
+                <p>React</p>
+            </div>
+            <div class="skill">
+                <img src="node.png" alt="Node.js">
+                <p>Node.js</p>
+            </div>
+            <div class="skill">
+                <img src="git.png" alt="Git">
+                <p>Git</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project">
+                <h3>E-commerce Website</h3>
+                <p>Developed a full-featured online store with product listings, shopping cart, and payment integration.</p>
+                <span>Technologies: React, Node.js, MongoDB</span>
+            </div>
+            <div class="project">
+                <h3>Task Management App</h3>
+                <p>Created a collaborative task management application with real-time updates and user authentication.</p>
+                <span>Technologies: Vue.js, Firebase</span>
+            </div>
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <p>Designed and developed a responsive portfolio website to showcase my work and skills.</p>
+                <span>Technologies: HTML, CSS, JavaScript</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="recommendations">
+        <h2>Recommendations</h2>
+        <div class="recommendations-container">
+            <div class="recommendation">
+                <p>"John demonstrated exceptional problem-solving skills during our project together. His attention to detail and commitment to quality are truly impressive."</p>
+                <p>- Jane Smith, CEO at TechCorp</p>
+            </div>
+            <div class="recommendation">
+                <p>"Working with John was a pleasure. He consistently delivered high-quality code and was always willing to go the extra mile to meet project deadlines."</p>
+                <p>- Michael Johnson, Senior Developer at WebSolutions</p>
+            </div>
+            <div class="recommendation">
+                <p>"John's ability to quickly grasp complex concepts and implement them effectively makes him a valuable asset to any development team."</p>
+                <p>- Sarah Williams, Project Manager at DigitalCreations</p>
+            </div>
+        </div>
+        <div class="recommendation-form">
+            <h3>Add a Recommendation</h3>
+            <textarea id="new_recommendation" rows="4" placeholder="Write your recommendation here..."></textarea>
+            <button onclick="addRecommendation()">Submit</button>
+        </div>
+    </section>
+
+    <div id="popup" class="popup">
+        <p>Thank you! Your recommendation has been added!</p>
+    </div>
+
+    <div class="home-icon">
+        <a href="#"><i class="fas fa-home"></i></a>
+    </div>
+
+    <script>
+        function addRecommendation() {
+            let recommendation = document.getElementById("new_recommendation").value;
+            if (recommendation) {
+                // Create new recommendation element
+                let element = document.createElement("div");
+                element.classList.add("recommendation");
+                element.innerHTML = `<p>"${recommendation}"</p><p>- Anonymous</p>`;
+                
+                // Add to recommendations container
+                document.querySelector(".recommendations-container").appendChild(element);
+                
+                // Clear input field
+                document.getElementById("new_recommendation").value = "";
+                
+                // Show confirmation
+                showPopup(true);
+            }
+        }
+        
+        function showPopup(show) {
+            let popup = document.getElementById("popup");
+            if (show) {
+                popup.style.visibility = "visible";
+                setTimeout(() => {
+                    popup.style.visibility = "hidden";
+                }, 2000);
+            } else {
+                popup.style.visibility = "hidden";
+            }
+        }
+    </script>
+</body>
+</html>
